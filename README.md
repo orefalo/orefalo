@@ -14,6 +14,7 @@ I am:
 - a Git master
 - a Unix SysOp
 - A Digital expert
+- A Team mate and mentor
 - a Dad and husband!
 
 Over the years, I have seen some of my predictions come true: Java, Git, NodeJS, REST, GraphQL, GoLang, SvelteKit - are some of my early adopters.
@@ -22,7 +23,7 @@ Over the years, I have seen some of my predictions come true: Java, Git, NodeJS,
 
 - 🔭 I enjoy coding as a hobby. It helps me understand technology.
 - 🌱 I’m currently learning something cool.
-- 👯 I find OpenSource to be the greatest thing ever. It helps us, engineers, to learn faster. I would not be who I am without it.
+- 👯 I find OpenSource to be the greatest thing ever. It helps us engineers to learn faster.
 - 💬 Ask me about anything , Would love to help out.✌
 - 📫 How to reach me: [LinkedIn](https://www.linkedin.com/in/orefalo/)
 - ⚡ Check out my recent [Articles](https://medium.com/@orefalo)
