@@ -16,7 +16,7 @@ Hi, I'm Olivier Refalo🙌, a Senior Architect, Developer and Technology enthusi
 
 **Languages and Tools:**
 
-[![My Skills](https://skillicons.dev/icons?i=typescript,javascript,nodejs,graphql,svelte,jquery,electron,tauri,java,go,kubernetes,git,terminal,docker,grafana,cassandra,azure,firebase,aws&perline=3)](https://skillicons.dev)
+[![My Skills](https://skillicons.dev/icons?i=typescript,javascript,nodejs,graphql,svelte,jquery,electron,tauri,java,go,git,terminal,kubernetes,docker,linux,grafana,prometheus,vector,kafka,cassandra,mysql,postgres,redis,azure,firebase,aws&perline=5)](https://skillicons.dev)
 
 
 ![Olivier's github stats](https://github-readme-stats.vercel.app/api?username=orefalo&show_icons=true&hide_border=true)
