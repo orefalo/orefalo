@@ -1,5 +1,23 @@
 Hi, I'm Olivier Refalo🙌, a Senior Architect, Developer and Technology enthusiast. 
 
+I am:
+
+- an Entrepreneur
+- a Chief Architect
+- a Business Architect
+- an Information Architect
+- A Technology Architect
+- a Integration Specialist
+- A Developer
+- a Web Designer
+- a Kubernetes Guru 
+- a Git master
+- a Unix SysOp
+- A Digital expert
+- a Dad and husband!
+
+Over the years, I have seen some of my predictions come true: Java, Git, NodeJS, REST, GraphQL, GoLang, SvelteKit - are some of my early adopters.
+
 **Talking about Personal Stuffs:**
 
 - 🔭 I enjoy coding as a hobby. It helps me understand technology.
