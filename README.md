@@ -26,9 +26,9 @@ Over the years, I have seen some of my predictions come true: Java, Git, NodeJS,
 - 👯 I find OpenSource to be the greatest thing ever. It helps us engineers to learn faster.
 - 💬 Ask me about anything , Would love to help out.✌
 - 📫 How to reach me: [LinkedIn](https://www.linkedin.com/in/orefalo/)
-- ⚡ Check out my recent [Articles](https://medium.com/@orefalo)
+- ⚡ Check out my recent [Articles](https://medium.com/@orefalo_66733)
 - 📝 Then you may explore my [Portfolio](https://orefalo.github.io/orefalo/)
-- ✨ I have pretty sharp at graphic design too.[SnapCore](https://www.snapcore.com/)
+- ✨ I have pretty sharp at graphic design too.[SnapCore](https://www.snapcore.com/) is my latest startup.
 
 **Community**
 - 
