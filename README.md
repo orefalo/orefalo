@@ -8,7 +8,7 @@ Hi, I'm Olivier Refalo🙌, a Senior Architect, Developer and Technology enthusi
 - 💬 Ask me about anything , Would love to help out.✌
 - 📫 How to reach me: [LinkedIn](https://www.linkedin.com/in/orefalo/)
 - ⚡ Check out my recent [Articles](https://medium.com/@orefalo)
-- 📝 Then you may explore my [Portfolio](https://orefalo.github.io/)
+- 📝 Then you may explore my [Portfolio](https://orefalo.github.io/orefalo/)
 - ✨ I have pretty sharp at graphic design too.[SnapCore](https://www.snapcore.com/)
 
 **Community**
