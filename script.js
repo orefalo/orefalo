@@ -25,9 +25,12 @@ function Timeline(cvs) {
   };
   self.targets = [
     // left column - number of elements
-    [29, 32, 48, 68],
+    [
+      29, 32, 48, 68, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180,
+      190,
+    ],
     // right column - number of elements
-    [29, 43, 38, 72, 73, 74],
+    [29, 38, 43, 72, 80, 104],
   ];
   self.dotColors = [
     ["#13669b", "rgba(19, 102, 155, 0.3)", "rgba(19, 102, 155, 0.08)"],
