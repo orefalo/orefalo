@@ -1,21 +1,20 @@
-Hi, I'm Olivier Refalo🙌, a Senior Architect, Developer and Technology enthusiast. 
+Hi, I'm Olivier Refalo 🙌,
 
 I am:
-
 - an Entrepreneur
 - a Chief Architect
 - a Business Architect
 - an Information Architect
-- A Technology Architect
+- a Technology Architect
 - a Integration Specialist
-- A Developer
+- a Developer
 - a Web Designer
 - a Kubernetes Guru 
 - a Git master
 - a Unix SysOp
-- A Digital expert
-- A Team mate and mentor
-- a Dad and husband!
+- a Digital expert
+- a Team mate and mentor
+- a Dad and Husband!
 
 Over the years, I have seen some of my predictions come true: Java, Git, NodeJS, REST, GraphQL, GoLang, SvelteKit - are some of my early adopters.
 
@@ -30,12 +29,9 @@ Over the years, I have seen some of my predictions come true: Java, Git, NodeJS,
 - 📝 Then you may explore my [Portfolio](https://orefalo.github.io/orefalo/)
 - ✨ I have pretty sharp at graphic design too.[SnapCore](https://www.snapcore.com/) is my latest startup.
 
-**Community**
-- 
-
 **Languages and Tools:**
 
-[![My Skills](https://skillicons.dev/icons?i=typescript,javascript,nodejs,graphql,svelte,markdown,html,sass,tailwindcss,jquery,electron,tauri,java,go,git,bash,kubernetes,docker,nginx,linux,grafana,prometheus,kafka,cassandra,mysql,postgres,redis,mongodb,azure,firebase,aws,vscode&perline=5)](https://skillicons.dev)
+[![My Skills](https://skillicons.dev/icons?i=typescript,javascript,nodejs,graphql,svelte,markdown,html,sass,tailwindcss,jquery,electron,tauri,java,go,git,bash,kubernetes,docker,nginx,linux,grafana,prometheus,kafka,cassandra,mysql,postgres,redis,mongodb,azure,firebase,aws,vscode&perline=5&theme=light)](https://skillicons.dev)
 
 
 ![Olivier's github stats](https://github-readme-stats.vercel.app/api?username=orefalo&show_icons=true&hide_border=true)

@@ -32,6 +32,29 @@
         font: 400 1em "Lato";
         -webkit-font-smoothing: antialiased;
       }
+
+      a {
+        text-decoration: none;
+        background-image: linear-gradient(currentColor, currentColor);
+        background-position: 0% 100%;
+        background-repeat: no-repeat;
+        background-size: 0% 4px;
+        transition: background-size cubic-bezier(0, 0.5, 0, 1) 0.3s;
+      }
+
+      a:hover,
+      a:focus {
+        text-decoration: none;
+        background-size: 100% 4px;
+      }
+
+      .name {
+        text-align: center;
+        font: 400 400% Tahoma;
+        color: #969696;
+        -webkit-text-stroke: 0.25px;
+      }
+
       #timeline {
         padding-top: 5%;
       }
@@ -97,18 +120,20 @@
       .timeline article:last-of-type h2 {
         color: #c6e0aa;
       }
-      .timeline article:last-of-type h6,
-      .timeline article:last-of-type a {
+      .timeline article:last-of-type h6 {
         color: #40aa00;
       }
+      .timeline article:last-of-type a {
+        color: #575757;
+      }
       .timeline article:last-of-type a:hover {
-        color: #95d40d;
+        color: #a6a6a6;
       }
     </style>
     <script src="prefixfree.min.js"></script>
   </head>
   <body>
-    <!-- partial:index.partial.html -->
+    <div class="name">Olivier Refalo</div>
     <section id="timeline">
       <div class="timeline">
         <canvas id="cvs3"></canvas>
@@ -154,11 +179,14 @@
         <article>
           <h2>Contributions</h2>
           <figure>
-            <figcaption>ornare</figcaption>
-            <h6>2012 - 06.2013</h6>
+            <figcaption>
+              <a href="https://murex.rocks/">Murex.Rocks shell</a>
+            </figcaption>
+            <h6>2023</h6>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam et
-              ipsum pulvinar, blandit neque in, ornare libero.
+              Murex is an intuitive, typed and content aware shell for the 2020s
+              and beyond. I rewrote the marketting site using vuepress and
+              enhanced the documentation.
             </p>
           </figure>
 
