@@ -26,7 +26,7 @@ function Timeline(cvs) {
   self.targets = [
     // left column - number of elements
     [
-      29, 32, 38, 68, 80, 83, 110, 120, 125, 135, 150, 160, 170, 200, 210, 230
+      29, 32, 38, 68, 80, 83, 110, 124, 129, 133, 152, 167, 175, 203, 210, 230
       
     ],
     // right column - number of elements
