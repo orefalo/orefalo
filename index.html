@@ -1,446 +1,451 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Olivier Refalo OpenSource Timeline</title>
-    <style>
-      @font-face {
-        font-family: "Lato";
-        font-style: normal;
-        font-weight: 400;
-        src: url(https://fonts.gstatic.com/s/lato/v24/S6uyw4BMUTPHjx4wWw.ttf)
-          format("truetype");
-      }
-      @font-face {
-        font-family: "Raleway";
-        font-style: normal;
-        font-weight: 400;
-        src: url(https://fonts.gstatic.com/s/raleway/v28/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVvaorCIPrQ.ttf)
-          format("truetype");
-      }
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-      body,
-      html {
-        color: #2c2c2c;
-        min-width: 600px;
-        height: 100%;
-        background: white;
-        font: 400 1em "Lato";
-        -webkit-font-smoothing: antialiased;
-      }
 
-      a {
-        text-decoration: none;
-        background-image: linear-gradient(currentColor, currentColor);
-        background-position: 0% 100%;
-        background-repeat: no-repeat;
-        background-size: 0% 4px;
-        transition: background-size cubic-bezier(0, 0.5, 0, 1) 0.3s;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <title>Olivier Refalo OpenSource Timeline</title>
+  <style>
+    @font-face {
+      font-family: "Lato";
+      font-style: normal;
+      font-weight: 400;
+      src: url(https://fonts.gstatic.com/s/lato/v24/S6uyw4BMUTPHjx4wWw.ttf) format("truetype");
+    }
 
-      a:hover,
-      a:focus {
-        text-decoration: none;
-        background-size: 100% 4px;
-      }
+    @font-face {
+      font-family: "Raleway";
+      font-style: normal;
+      font-weight: 400;
+      src: url(https://fonts.gstatic.com/s/raleway/v28/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVvaorCIPrQ.ttf) format("truetype");
+    }
 
-      .name {
-        text-align: center;
-        font: 400 400% Tahoma;
-        color: #969696;
-        -webkit-text-stroke: 0.25px;
-      }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-      .name .home {
-        font: 100 30% Tahoma;
-      }
+    body,
+    html {
+      color: #2c2c2c;
+      min-width: 600px;
+      height: 100%;
+      background: white;
+      font: 400 1em "Lato";
+      -webkit-font-smoothing: antialiased;
+    }
 
-      #timeline {
-        padding-top: 5%;
-      }
-      .timeline {
-        height: 100%;
-        position: relative;
-      }
-      .timeline canvas {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        left: 0;
-        top: 0;
-      }
-      .timeline figcaption {
-        font: 900 190% "Lato";
-        text-transform: uppercase;
-        -webkit-text-stroke: 0.25px;
-      }
-      .timeline h2 {
-        font: 400 400% "Raleway";
-        padding-bottom: 100px;
-        color: #b2cde9;
-      }
-      .timeline h6 {
-        color: #0090f5;
-        font: 400 80% Tahoma;
-      }
-      .timeline p,
-      .timeline ol {
-        font: 400 95% "Raleway";
-        padding: 3px 0 20px 0;
-        color: #575757;
-        text-align: justify;
-        width: 70%;
-      }
-      .timeline ol {
-        list-style: disc;
-        margin-top: -20px;
-        padding-left: 40px;
-      }
-      .timeline figure {
-        float: right;
-        width: 100%;
-      }
-      .timeline article {
-        position: relative;
-        width: 38%;
-        overflow: hidden;
-        margin-bottom: 100px;
-      }
-      .timeline article:first-of-type {
-        float: left;
-        text-align: right;
-      }
-      .timeline article:first-of-type p,
-      .timeline article:first-of-type figure {
-        float: right;
-      }
-      .timeline article:last-of-type {
-        float: right;
-      }
-      .timeline article:last-of-type h2 {
-        color: #c6e0aa;
-      }
-      .timeline article:last-of-type h6 {
-        color: #40aa00;
-      }
-      .timeline article a {
-        color: #575757;
-      }
-      .timeline article a:hover {
-        color: #a6a6a6;
-      }
-    </style>
-    <base target="_blank" />
-    <script src="prefixfree.min.js"></script>
-  </head>
-  <body>
-    <div class="name">
-      Olivier Refalo
-      <div class="home">https://www.github.com/orefalo</div>
+    a {
+      text-decoration: none;
+      background-image: linear-gradient(currentColor, currentColor);
+      background-position: 0% 100%;
+      background-repeat: no-repeat;
+      background-size: 0% 4px;
+      transition: background-size cubic-bezier(0, 0.5, 0, 1) 0.3s;
+    }
+
+    a:hover,
+    a:focus {
+      text-decoration: none;
+      background-size: 100% 4px;
+    }
+
+    .name {
+      text-align: center;
+      font: 400 400% Tahoma;
+      color: #969696;
+      -webkit-text-stroke: 0.25px;
+    }
+
+    .name .home {
+      font: 100 30% Tahoma;
+    }
+
+    #timeline {
+      padding-top: 5%;
+    }
+
+    .timeline {
+      height: 100%;
+      position: relative;
+    }
+
+    .timeline canvas {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+    }
+
+    .timeline figcaption {
+      font: 900 190% "Lato";
+      text-transform: uppercase;
+      -webkit-text-stroke: 0.25px;
+    }
+
+    .timeline h2 {
+      font: 400 400% "Raleway";
+      padding-bottom: 100px;
+      color: #b2cde9;
+      font-size: 50px;
+    }
+
+    .timeline h6 {
+      color: #0090f5;
+      font: 400 80% Tahoma;
+    }
+
+    .timeline p,
+    .timeline ol {
+      font: 400 95% "Raleway";
+      padding: 3px 0 20px 0;
+      color: #575757;
+      text-align: justify;
+      width: 70%;
+    }
+
+    .timeline ol {
+      list-style: disc;
+      margin-top: -20px;
+      padding-left: 40px;
+    }
+
+    .timeline figure {
+      float: right;
+      width: 100%;
+    }
+
+    .timeline article {
+      position: relative;
+      width: 38%;
+      overflow: hidden;
+      margin-bottom: 100px;
+    }
+
+    .timeline article:first-of-type {
+      float: left;
+      text-align: right;
+    }
+
+    .timeline article:first-of-type p,
+    .timeline article:first-of-type figure {
+      float: right;
+    }
+
+    .timeline article:last-of-type {
+      float: right;
+    }
+
+    .timeline article:last-of-type h2 {
+      color: #c6e0aa;
+    }
+
+    .timeline article:last-of-type h6 {
+      color: #40aa00;
+    }
+
+    .timeline article a {
+      color: #575757;
+    }
+
+    .timeline article a:hover {
+      color: #a6a6a6;
+    }
+  </style>
+  <base target="_blank" />
+  <script src="prefixfree.min.js"></script>
+</head>
+
+<body>
+  <div class="name">
+    Olivier Refalo
+    <div class="home">https://www.github.com/orefalo</div>
+  </div>
+  <section id="timeline">
+    <div class="timeline">
+      <canvas id="cvs3"></canvas>
+      <article>
+        <h2>My Projects</h2>
+        <figure>
+          <figcaption>
+            <a href="https://github.com/orefalo/cossui-svelte">CossUI-Svelte</a>
+          </figcaption>
+          <h6>2026</h6>
+          <p>
+            A port of the excellent coss-ui component library to Svelte.
+          </p>
+        </figure>
+        <figure>
+          <figcaption>
+            <a href="https://github.com/orefalo/AgenticMemory-ts">Agentic Memory-TS</a>
+          </figcaption>
+          <h6>2025</h6>
+          <p>
+            A port of an agentic memory system from python to Typescript.
+          </p>
+        </figure>
+        <figure>
+          <figcaption>
+            <a href="https://github.com/search?q=owner%3Aorefalo+murex-module&type=repositories">Murex modules</a>
+          </figcaption>
+          <h6>2023</h6>
+          <p>
+            I authored several modules for the Murex shell, mainly for
+            migrating my ecosystem.
+          </p>
+        </figure>
+
+        <figure>
+          <figcaption>
+            <a href="https://github.com/orefalo/awesome-identifiers">GUID Research</a>
+          </figcaption>
+          <h6>2023</h6>
+          <p>
+            After years of using UIDs with limited understanding, I carried out research comparing the implementations
+            available on the market. The result is a full review and a clear guide on which implementation to use in
+            each case.
+          </p>
+        </figure>
+
+        <figure>
+          <figcaption>
+            <a href="https://github.com/orefalo/ChatGPT_Superset.popclipext">ChartGPT for PopClip</a>
+          </figcaption>
+          <h6>2023</h6>
+          <p>
+            A set of popClip extensions that enable integration with OpenAI.
+            They are convenient and allow you to leverage the power of chatGPT
+            anywhere from your desktop.
+          </p>
+        </figure>
+
+        <figure>
+          <figcaption><a href="https://github.com/orefalo/typegraphql-mikroorm-poc">DDD GraphQL</a></figcaption>
+          <h6>2022</h6>
+          <p>
+            A Domain Driven Design micro-service proof of concept which auto
+            generates databased and GraphQL Layer from code annotations.
+
+            <a href="https://medium.com/@orefalo_66733/microservice-proof-of-concept-7eb951cf7ee6">Supporting
+              Article</a>
+          </p>
+        </figure>
+
+        <figure>
+          <figcaption>
+            <a href="https://github.com/orefalo/signedqrcode">Sealed QR Codes</a>
+          </figcaption>
+          <h6>2021</h6>
+          <p>
+            With COVID-19, we saw the proliferation of QR codes everywhere. I
+            embarked on this project to understand the technology. The library
+            produces secure QR codes in GoLang
+          </p>
+        </figure>
+
+        <figure>
+          <figcaption>
+            <a href="https://github.com/orefalo/svelte-splitpanes">svelte-splitpanes</a>
+          </figcaption>
+          <h6>2021</h6>
+          <p>
+            "To be successful, a good framework must come with good
+            components.". I authored a state of the art responsive component
+            to layout resizable view panels.
+          </p>
+        </figure>
+
+        <figure>
+          <figcaption>
+            <a href="https://github.com/lean-mu">Lean Mu</a>
+          </figcaption>
+          <h6>2020-2022</h6>
+          <p>
+            Mu is a fn() server-less platform for private cloud. It is based
+            on a customized version of Oracle fn-project, Grafana, Vector and
+            K3s Kubernetes. It shines by its low resource footprint. Mu
+            bundles a functions runtime, a micro-service orchestrator in a
+            simple to deploy helm chart.
+          </p>
+        </figure>
+
+        <figure>
+          <figcaption>
+            <a href="https://www.snapcore.com">SnapCore Designer & Platform</a>
+          </figcaption>
+          <h6>2019</h6>
+          <p>
+            My 3rd startup focussed on providing a visual environment to
+            design and operate GraphQL APIs.
+          </p>
+        </figure>
+
+        <figure>
+          <figcaption>
+            <a href="https://github.com/orefalo/graphql-shorthand-parser">GraphQL SDL parser</a>
+          </figcaption>
+          <h6>2019</h6>
+          <p>
+            Parsing GraphQL SDL Grammar can be difficult using GraphQL.js, it
+            also accounts for a significant bundle size. I constructed a
+            PEG-compliant parser that is considerably smaller, faster, and has
+            no dependencies.
+          </p>
+        </figure>
+
+        <figure>
+          <figcaption>
+            <a href="https://github.com/orefalo/StarUML-GraphQL">StarUML-GraphQL</a>
+          </figcaption>
+          <h6>2018</h6>
+          <p>
+            StarUML is a software modeling and diagramming tool used for
+            creating UML (Unified Modeling Language) diagrams. With my growing
+            interest for GraphQL, I wrote an enable for StarUML which allows
+            to visually model schemas.
+          </p>
+        </figure>
+
+
+
+        <figure>
+          <figcaption><a href="http://www.crionics.com">Crionics jPDF Suite</a></figcaption>
+          <h6>2000-2010</h6>
+          <p>
+            Crionics Inc. is my second startup. Crionics provides a full suite
+            of headless PDF manipulation softwares for the Java ecosystem.
+          </p>
+        </figure>
+
+        <figure>
+          <figcaption>
+            <a href="https://github.com/orefalo/g2">G2</a>
+          </figcaption>
+          <h6>2016-2023</h6>
+          <p>
+            Git has a steep learning curve, back in the time I used this
+            project to help adoption in one of the organization I served. G2
+            is a simplified git command line client, easy to learn.
+          </p>
+        </figure>
+
+        <figure>
+          <figcaption>
+            <a href="https://mootools.net/forge/p/moomasonry">MooMasonery</a>
+          </figcaption>
+          <h6>2016</h6>
+          <p>
+            Masonry layout is a type of grid-based layout commonly used in web
+            design to create a visually appealing and dynamic arrangement of
+            elements. This is a mootools implementation.
+          </p>
+        </figure>
+
+        <figure>
+          <figcaption>
+            <a href="https://github.com/orefalo/TurboMandel">TurboMandel</a>
+          </figcaption>
+          <h6>2015</h6>
+          <p>
+            A super-fast Mandelbrot fractal renderer. Built during my early
+            days, first version was in C/X11. This one was rewritten in Java a
+            few years later.
+          </p>
+        </figure>
+
+        <figure>
+          <figcaption>
+            <a href="https://github.com/orefalo/ExpressionEvaluator">Expression Evaluator</a>
+          </figcaption>
+          <h6>2011</h6>
+          <p>
+            A expression evaluator which supports prioritization, variables
+            and expressions. One of my first opensource project.
+          </p>
+        </figure>
+
+        <figure>
+          <figcaption>
+            <a href="https://github.com/orefalo/JacobsonKarels">Jacobson Karels</a>
+          </figcaption>
+          <h6>2008</h6>
+          <p>
+            a Java implementation of Jacobson Karels. It can be used to
+            estimate API latency & timeout based on sample metrics
+          </p>
+        </figure>
+
+      </article>
+
+      <article>
+        <h2>My Contributions</h2>
+        <figure>
+          <figcaption>
+            <a href="https://murex.rocks/">Murex.Rocks shell</a>
+          </figcaption>
+          <h6>2023</h6>
+          <p>
+            Murex is an intuitive, typed and content aware shell for the 2020s
+            and beyond. I rewrote the marketting site using vuepress and
+            enhanced the documentation.
+          </p>
+        </figure>
+
+        <figure>
+          <figcaption>
+            <a href="https://github.com/orefalo/tauri-sveltekit-template">SveltKit Tauri Template</a>
+          </figcaption>
+          <h6>2022</h6>
+          <p>
+            Tauri.js is an open-source framework for building cross-platform
+            desktop applications using web technologies such as HTML, CSS, and
+            JavaScript. This project allows developers to create native
+            desktop applications by leveraging the power of Sveltekit.
+          </p>
+        </figure>
+        <figure>
+          <figcaption>
+            <a href="https://github.com/orefalo/sveltekit-stripe">Sveltekit Stripe</a>
+          </figcaption>
+          <h6>2021</h6>
+          <p>Got Stripe and Sveltekit working together</p>
+        </figure>
+        <figure>
+          <figcaption>
+            <a href="https://github.com/orefalo/sveltekit-monorepo">SvelteKit Monorepo Template</a>
+          </figcaption>
+          <h6>2021</h6>
+          <p>
+            A monorepo, short for "monolithic repository," is a software
+            development approach where multiple projects or components are
+            stored in a single repository. This project is a starter template
+            for large SvelteKit projects.
+          </p>
+        </figure>
+        <figure>
+          <figcaption>
+            <a href="https://github.com/themesberg/flowbite-svelte">Flowbite Svelte</a>
+          </figcaption>
+          <h6>2020</h6>
+          <p>Contributed several fixes to this excellent component library</p>
+        </figure>
+        <figure>
+          <figcaption>
+            <a href="https://github.com/posabsolute/jQuery-Validation-Engine">jQuery Validation Engine</a>
+          </figcaption>
+          <h6>2017</h6>
+          <p>
+            Back in the time form validation was a big topic, I embarked on a
+            complete rewrite of the project.
+          </p>
+        </figure>
+      </article>
+      <br style="clear: both" />
     </div>
-    <section id="timeline">
-      <div class="timeline">
-        <canvas id="cvs3"></canvas>
-        <article>
-          <h2>Projects</h2>
-          <figure>
-            <figcaption>
-              <a
-                href="https://github.com/search?q=owner%3Aorefalo+murex-module&type=repositories"
-                >Murex modules</a
-              >
-            </figcaption>
-            <h6>2023</h6>
-            <p>
-              I authored several modules for the Murex shell, mainly for
-              migrating my ecosystem.
-            </p>
-          </figure>
+  </section>
+  <!-- partial -->
+  <script src="script.js"></script>
+</body>
 
-          <figure>
-            <figcaption>
-              <a href="https://github.com/orefalo/awesome-identifiers"
-                >GUID Comparison</a
-              >
-            </figcaption>
-            <h6>2023</h6>
-            <p>
-              After many years of using UIDs with little understanding, I
-              conducted a research that compares all implementations in the
-              market. The result is a comprehensive review and a clear
-              understanding of what implementation to use when.
-            </p>
-          </figure>
-
-          <figure>
-            <figcaption>
-              <a href="https://github.com/orefalo/ChatGPT_Superset.popclipext"
-                >ChartGPT for PopClip</a
-              >
-            </figcaption>
-            <h6>2023</h6>
-            <p>
-              A set of popClip extensions that enable integration with OpenAI.
-              They are convenient and allow you to leverage the power of chatGPT
-              anywhere from your desktop.
-            </p>
-          </figure>
-
-          <figure>
-            <figcaption><a href="https://github.com/orefalo/typegraphql-mikroorm-poc">DDD GraphQL</a></figcaption>
-            <h6>2022</h6>
-            <p>
-              A Domain Driven Design micro-service proof of concept which auto
-              generates databased and GraphQL Layer from code annotations.
-
-              <a
-                href="https://medium.com/@orefalo_66733/microservice-proof-of-concept-7eb951cf7ee6"
-                >Supporting Article</a
-              >
-            </p>
-          </figure>
-
-          <figure>
-            <figcaption>
-              <a href="https://github.com/orefalo/signedqrcode"
-                >Sealed QR Codes</a
-              >
-            </figcaption>
-            <h6>2021</h6>
-            <p>
-              With COVID-19, we saw the proliferation of QR codes everywhere. I
-              embarked on this project to understand the technology. The library
-              produces secure QR codes in GoLang
-            </p>
-          </figure>
-
-          <figure>
-            <figcaption>
-              <a href="https://github.com/orefalo/svelte-splitpanes"
-                >svelte-splitpanes</a
-              >
-            </figcaption>
-            <h6>2021</h6>
-            <p>
-              "To be successful, a good framework must come with good
-              components.". I authored a state of the art responsive component
-              to layout resizable view panels.
-            </p>
-          </figure>
-
-          <figure>
-            <figcaption>
-              <a href="https://github.com/lean-mu">Lean Mu</a>
-            </figcaption>
-            <h6>2020-2022</h6>
-            <p>
-              Mu is a fn() server-less platform for private cloud. It is based
-              on a customized version of Oracle fn-project, Grafana, Vector and
-              K3s Kubernetes. It shines by its low resource footprint. Mu
-              bundles a functions runtime, a micro-service orchestrator in a
-              simple to deploy helm chart.
-            </p>
-          </figure>
-
-          <figure>
-            <figcaption>
-              <a href="https://www.snapcore.com"
-                >SnapCore Designer & Platform</a
-              >
-            </figcaption>
-            <h6>2019</h6>
-            <p>
-              My 3rd startup focussed on providing a visual environment to
-              design and operate GraphQL APIs.
-            </p>
-          </figure>
-
-          <figure>
-            <figcaption>
-              <a href="https://github.com/orefalo/graphql-shorthand-parser"
-                >GraphQL SDL parser</a
-              >
-            </figcaption>
-            <h6>2019</h6>
-            <p>
-              Parsing GraphQL SDL Grammar can be difficult using GraphQL.js, it
-              also accounts for a significant bundle size. I constructed a
-              PEG-compliant parser that is considerably smaller, faster, and has
-              no dependencies.
-            </p>
-          </figure>
-
-          <figure>
-            <figcaption>
-              <a href="https://github.com/orefalo/StarUML-GraphQL"
-                >StarUML-GraphQL</a
-              >
-            </figcaption>
-            <h6>2018</h6>
-            <p>
-              StarUML is a software modeling and diagramming tool used for
-              creating UML (Unified Modeling Language) diagrams. With my growing
-              interest for GraphQL, I wrote an enable for StarUML which allows
-              to visually model schemas.
-            </p>
-          </figure>
-
-
-
-          <figure>
-            <figcaption><a href="http://www.crionics.com">Crionics jPDF Suite</a></figcaption>
-            <h6>2000-2010</h6>
-            <p>
-              Crionics Inc. is my second startup. Crionics provides a full suite
-              of headless PDF manipulation softwares for the Java ecosystem.
-            </p>
-          </figure>
-
-          <figure>
-            <figcaption>
-              <a href="https://github.com/orefalo/g2">G2</a>
-            </figcaption>
-            <h6>2016-2023</h6>
-            <p>
-              Git has a steep learning curve, back in the time I used this
-              project to help adoption in one of the organization I served. G2
-              is a simplified git command line client, easy to learn.
-            </p>
-          </figure>
-
-          <figure>
-            <figcaption>
-              <a href="https://mootools.net/forge/p/moomasonry">MooMasonery</a>
-            </figcaption>
-            <h6>2016</h6>
-            <p>
-              Masonry layout is a type of grid-based layout commonly used in web
-              design to create a visually appealing and dynamic arrangement of
-              elements. This is a mootools implementation.
-            </p>
-          </figure>
-
-          <figure>
-            <figcaption>
-              <a href="https://github.com/orefalo/TurboMandel">TurboMandel</a>
-            </figcaption>
-            <h6>2015</h6>
-            <p>
-              A super-fast Mandelbrot fractal renderer. Built during my early
-              days, first version was in C/X11. This one was rewritten in Java a
-              few years later.
-            </p>
-          </figure>
-
-          <figure>
-            <figcaption>
-              <a href="https://github.com/orefalo/ExpressionEvaluator"
-                >Expression Evaluator</a
-              >
-            </figcaption>
-            <h6>2011</h6>
-            <p>
-              A expression evaluator which supports prioritization, variables
-              and expressions. One of my first opensource project.
-            </p>
-          </figure>
-
-          <figure>
-            <figcaption>
-              <a href="https://github.com/orefalo/JacobsonKarels"
-                >Jacobson Karels</a
-              >
-            </figcaption>
-            <h6>2008</h6>
-            <p>
-              a Java implementation of Jacobson Karels. It can be used to
-              estimate API latency & timeout based on sample metrics
-            </p>
-          </figure>
-
-        </article>
-
-        <article>
-          <h2>Contributions</h2>
-          <figure>
-            <figcaption>
-              <a href="https://murex.rocks/">Murex.Rocks shell</a>
-            </figcaption>
-            <h6>2023</h6>
-            <p>
-              Murex is an intuitive, typed and content aware shell for the 2020s
-              and beyond. I rewrote the marketting site using vuepress and
-              enhanced the documentation.
-            </p>
-          </figure>
-
-          <figure>
-            <figcaption>
-              <a href="https://github.com/orefalo/tauri-sveltekit-template"
-                >SveltKit Tauri Template</a
-              >
-            </figcaption>
-            <h6>2022</h6>
-            <p>
-              Tauri.js is an open-source framework for building cross-platform
-              desktop applications using web technologies such as HTML, CSS, and
-              JavaScript. This project allows developers to create native
-              desktop applications by leveraging the power of Sveltekit.
-            </p>
-          </figure>
-          <figure>
-            <figcaption>
-              <a href="https://github.com/orefalo/sveltekit-stripe"
-                >Sveltekit Stripe</a
-              >
-            </figcaption>
-            <h6>2021</h6>
-            <p>Got Stripe and Sveltekit working together</p>
-          </figure>
-          <figure>
-            <figcaption>
-              <a href="https://github.com/orefalo/sveltekit-monorepo"
-                >SvelteKit Monorepo Template</a
-              >
-            </figcaption>
-            <h6>2021</h6>
-            <p>
-              A monorepo, short for "monolithic repository," is a software
-              development approach where multiple projects or components are
-              stored in a single repository. This project is a starter template
-              for large SvelteKit projects.
-            </p>
-          </figure>
-          <figure>
-            <figcaption>
-              <a href="https://github.com/themesberg/flowbite-svelte"
-                >Flowbite Svelte</a
-              >
-            </figcaption>
-            <h6>2020</h6>
-            <p>Contributed several fixes to this excellent component library</p>
-          </figure>
-          <figure>
-            <figcaption>
-              <a href="https://github.com/posabsolute/jQuery-Validation-Engine"
-                >jQuery Validation Engine</a
-              >
-            </figcaption>
-            <h6>2017</h6>
-            <p>
-              Back in the time form validation was a big topic, I embarked on a
-              complete rewrite of the project.
-            </p>
-          </figure>
-        </article>
-        <br style="clear: both" />
-      </div>
-    </section>
-    <!-- partial -->
-    <script src="script.js"></script>
-  </body>
 </html>

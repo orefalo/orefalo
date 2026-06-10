@@ -23,15 +23,6 @@ function Timeline(cvs) {
     density: 8,
     radius: 600,
   };
-  self.targets = [
-    // left column - number of elements
-    [
-      29, 32, 38, 68, 80, 83, 110, 124, 129, 133, 152, 167, 175, 203, 210, 230
-      
-    ],
-    // right column - number of elements
-    [29, 38, 63, 72, 80, 104],
-  ];
   self.dotColors = [
     ["#13669b", "rgba(19, 102, 155, 0.3)", "rgba(19, 102, 155, 0.08)"],
     ["#7dd317", "rgba(113, 222, 15, 0.3)", "rgba(91, 164, 22, 0.12)"],
@@ -43,27 +34,20 @@ function Timeline(cvs) {
 
   function InitDots() {
     var tl = document.querySelector(".timeline");
-    var top = tl.querySelector(":scope h2").offsetHeight;
-
-    self.lines[0].dots = [];
-    var y = top;
-
-    // there are two columns, so :first and :last selector and handing shortcuts to select them
-
     var nodes = tl.querySelectorAll(":scope article");
 
-    nodes[0].querySelectorAll(":scope figure").forEach((el, i) => {
-      self.lines[0].dots.push([el.offsetWidth + 20, y + 20]);
-      y += el.offsetHeight;
-    });
+    function computeDots(lineIndex, xFn, article) {
+      self.lines[lineIndex].dots = [];
+      var maxIdx = self.lines[lineIndex].points.length - 2;
+      article.querySelectorAll(":scope figure").forEach((el) => {
+        var dotY = el.offsetTop + 20;
+        var targetIdx = Math.min(Math.round(dotY / self.options.density), maxIdx);
+        self.lines[lineIndex].dots.push([xFn(el), dotY, targetIdx]);
+      });
+    }
 
-    self.lines[1].dots = [];
-    y = top;
-
-    nodes[1].querySelectorAll(":scope figure").forEach((el, i) => {
-      self.lines[1].dots.push([canvas.width - el.offsetWidth - 20, y + 20]);
-      y += el.offsetHeight;
-    });
+    computeDots(0, (el) => el.offsetWidth + 20, nodes[0]);
+    computeDots(1, (el) => canvas.width - el.offsetWidth - 20, nodes[1]);
   }
 
   function OnResize() {
@@ -76,6 +60,7 @@ function Timeline(cvs) {
     self.lines[0].reset(canvas.offsetWidth / 2 - 15);
     self.lines[1].reset(canvas.offsetWidth / 2 + 15);
 
+    alignContributionsByYear();
     InitDots();
 
     self.toggle(!wasPaused);
@@ -184,22 +169,22 @@ function Timeline(cvs) {
   }
 
   function redraw() {
+    var i, j, points, point, xc, yc, dot, id, dot2, p1, p2;
+
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    for (var i = 0; i < 2; i++) {
-      var points = self.lines[i].points;
+    for (i = 0; i < 2; i++) {
+      points = self.lines[i].points;
 
       ctx.beginPath();
       ctx.lineWidth = 2;
       ctx.strokeStyle = self.lines[i].color;
       ctx.moveTo(points[15].x, points[15].y);
 
-      for (var j = 15; j < points.length - 2; j++) {
-        var point = points[j];
-
-        var xc = (points[j + 1].x + point.x) / 2;
-        var yc = (points[j + 1].y + point.y) / 2;
-
+      for (j = 15; j < points.length - 2; j++) {
+        point = points[j];
+        xc = (points[j + 1].x + point.x) / 2;
+        yc = (points[j + 1].y + point.y) / 2;
         ctx.quadraticCurveTo(point.x, point.y, xc, yc);
       }
       ctx.stroke();
@@ -209,20 +194,18 @@ function Timeline(cvs) {
       ctx.lineWidth = 1.2;
       ctx.strokeStyle = self.dotColors[i][2];
 
-      for (var j = 0; j < self.lines[i].dots.length; j++) {
-        var dot = self.lines[i].dots[j],
-          id = self.targets[i][j];
+      for (j = 0; j < self.lines[i].dots.length; j++) {
+        dot = self.lines[i].dots[j];
+        id = dot[2];
         dot2 = [
           (self.lines[i].points[id].x + self.lines[i].points[id + 1].x) / 2,
           (self.lines[i].points[id].y + self.lines[i].points[id + 1].y) / 2,
         ];
-
-        var p1 = { x: dot[0], y: dot[1] };
-        var p2 = { x: dot2[0], y: dot2[1] };
+        p1 = { x: dot[0], y: dot[1] };
+        p2 = { x: dot2[0], y: dot2[1] };
 
         drawLine(p1, p2);
         drawCircle(p1, 3, self.dotColors[i][0]);
-
         drawCircle(p2, 11, self.dotColors[i][1]);
         drawCircle(p2, 5.5, self.dotColors[i][0]);
       }
@@ -254,4 +237,42 @@ function Timeline(cvs) {
 
   self.isOK = init();
 }
+function alignContributionsByYear() {
+  var tl = document.querySelector(".timeline");
+  var nodes = tl.querySelectorAll(":scope article");
+  var leftArticle = nodes[0];
+  var rightArticle = nodes[1];
+
+  function getYear(el) {
+    var h6 = el.querySelector("h6");
+    return h6 ? h6.textContent.trim().split(/[^0-9]/)[0] : "";
+  }
+
+  // Build year -> offsetTop of its first occurrence in the left column
+  var yearYMap = {};
+  leftArticle.querySelectorAll(":scope figure").forEach((el) => {
+    var year = getYear(el);
+    if (year && yearYMap[year] === undefined) {
+      yearYMap[year] = el.offsetTop;
+    }
+  });
+
+  // Reset margins and snapshot heights before any writes
+  var rightFigures = rightArticle.querySelectorAll(":scope figure");
+  rightFigures.forEach((el) => { el.style.marginTop = ""; });
+  var rightH2Height = rightArticle.querySelector("h2").offsetHeight;
+  var heights = [];
+  rightFigures.forEach((el) => { heights.push(el.offsetHeight); });
+
+  // Apply margins to align each right-column figure with its year in the left column
+  var prevBottom = rightH2Height;
+  rightFigures.forEach((el, i) => {
+    var year = getYear(el);
+    var targetY = yearYMap[year];
+    var margin = (targetY !== undefined) ? Math.max(0, targetY - prevBottom) : 0;
+    el.style.marginTop = `${margin}px`;
+    prevBottom += margin + heights[i];
+  });
+}
+
 new Timeline(document.querySelector("#cvs3")).toggle(true);
