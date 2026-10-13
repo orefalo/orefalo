@@ -292,4 +292,54 @@ function alignContributionsByYear() {
   }
 }
 
+// Icon shown next to each entry, picked from the link it points to.
+// Slugs are Simple Icons names (https://simpleicons.org); fallback is the GitHub mark.
+function addIcons() {
+  var icons = [
+    ["cossui-svelte", "svelte"],
+    ["AgenticMemory", "typescript"],
+    ["murex", "gnubash"],
+    ["ChatGPT", "openai"],
+    ["typegraphql", "graphql"],
+    ["signedqrcode", "go"],
+    ["splitpanes", "svelte"],
+    ["lean-mu", "kubernetes"],
+    ["snapcore", "graphql"],
+    ["graphql", "graphql"],
+    ["StarUML", "graphql"],
+    ["crionics", "openjdk"],
+    ["orefalo/g2", "git"],
+    ["moomasonry", "javascript"],
+    ["TurboMandel", "openjdk"],
+    ["ExpressionEvaluator", "openjdk"],
+    ["JacobsonKarels", "openjdk"],
+    ["tauri", "tauri"],
+    ["stripe", "stripe"],
+    ["sveltekit", "svelte"],
+    ["flowbite", "flowbite"],
+    ["jQuery", "jquery"],
+    ["medium.com", "medium"],
+  ];
+  var base = "https://cdn.simpleicons.org/";
+
+  document.querySelectorAll(".timeline figcaption").forEach((cap) => {
+    var a = cap.querySelector("a");
+    if (!a) return;
+    var href = a.getAttribute("href").toLowerCase();
+    var hit = icons.find((i) => href.includes(i[0].toLowerCase()));
+    var img = document.createElement("img");
+    img.className = "icon";
+    img.alt = "";
+    img.width = img.height = 28;
+    img.src = base + (hit ? hit[1] : "github");
+    img.onerror = function () {
+      img.onerror = function () { img.remove(); };
+      img.src = base + "github";
+    };
+    cap.insertBefore(img, a);
+  });
+}
+
+addIcons();
+
 new Timeline(document.querySelector("#cvs3")).toggle(true);
