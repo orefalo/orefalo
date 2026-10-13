@@ -26,6 +26,7 @@ function Timeline(cvs) {
   self.dotColors = [
     ["#13669b", "rgba(19, 102, 155, 0.3)", "rgba(19, 102, 155, 0.08)"],
     ["#7dd317", "rgba(113, 222, 15, 0.3)", "rgba(91, 164, 22, 0.12)"],
+    ["#f2c200", "rgba(242, 194, 0, 0.3)", "rgba(217, 164, 0, 0.12)"],
   ];
 
   self.isPaused = function () {
@@ -46,8 +47,9 @@ function Timeline(cvs) {
       });
     }
 
-    computeDots(0, (el) => el.offsetWidth + 20, nodes[0]);
-    computeDots(1, (el) => canvas.width - el.offsetWidth - 20, nodes[1]);
+    computeDots(0, (el) => nodes[0].offsetLeft + nodes[0].offsetWidth + 20, nodes[0]);
+    computeDots(1, (el) => nodes[1].offsetLeft - 20, nodes[1]);
+    computeDots(2, (el) => nodes[2].offsetLeft - 20, nodes[2]);
   }
 
   function OnResize() {
@@ -57,8 +59,12 @@ function Timeline(cvs) {
     var wasPaused = paused;
     self.toggle(false);
     // Init lines
-    self.lines[0].reset(canvas.offsetWidth / 2 - 15);
-    self.lines[1].reset(canvas.offsetWidth / 2 + 15);
+    var nodes = document.querySelectorAll(".timeline > article");
+    var mid =
+      (nodes[0].offsetLeft + nodes[0].offsetWidth + nodes[1].offsetLeft) / 2;
+    self.lines[0].reset(mid - 30);
+    self.lines[1].reset(mid);
+    self.lines[2].reset(mid + 30);
 
     alignContributionsByYear();
     InitDots();
@@ -82,6 +88,13 @@ function Timeline(cvs) {
         0,
         canvas.offsetHeight - 100,
         "#a0d59c",
+        self.options,
+        mouse
+      );
+      self.lines[2] = new Line(
+        0,
+        canvas.offsetHeight - 100,
+        "#f2c200",
         self.options,
         mouse
       );
@@ -173,7 +186,7 @@ function Timeline(cvs) {
 
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    for (i = 0; i < 2; i++) {
+    for (i = 0; i < 3; i++) {
       points = self.lines[i].points;
 
       ctx.beginPath();
@@ -217,6 +230,7 @@ function Timeline(cvs) {
 
     self.lines[0].update();
     self.lines[1].update();
+    self.lines[2].update();
 
     redraw();
   }
@@ -241,11 +255,11 @@ function alignContributionsByYear() {
   var tl = document.querySelector(".timeline");
   var nodes = tl.querySelectorAll(":scope article");
   var leftArticle = nodes[0];
-  var rightArticle = nodes[1];
 
   function getYear(el) {
     var h6 = el.querySelector("h6");
-    return h6 ? h6.textContent.trim().split(/[^0-9]/)[0] : "";
+    var m = h6 && h6.textContent.match(/\d{4}/);
+    return m ? m[0] : "";
   }
 
   // Build year -> offsetTop of its first occurrence in the left column
@@ -257,22 +271,25 @@ function alignContributionsByYear() {
     }
   });
 
-  // Reset margins and snapshot heights before any writes
-  var rightFigures = rightArticle.querySelectorAll(":scope figure");
-  rightFigures.forEach((el) => { el.style.marginTop = ""; });
-  var rightH2Height = rightArticle.querySelector("h2").offsetHeight;
-  var heights = [];
-  rightFigures.forEach((el) => { heights.push(el.offsetHeight); });
+  for (var n = 1; n < nodes.length; n++) alignColumn(nodes[n]);
 
-  // Apply margins to align each right-column figure with its year in the left column
-  var prevBottom = rightH2Height;
-  rightFigures.forEach((el, i) => {
-    var year = getYear(el);
-    var targetY = yearYMap[year];
-    var margin = (targetY !== undefined) ? Math.max(0, targetY - prevBottom) : 0;
-    el.style.marginTop = `${margin}px`;
-    prevBottom += margin + heights[i];
-  });
+  function alignColumn(article) {
+    // Reset margins and snapshot heights before any writes
+    var figures = article.querySelectorAll(":scope figure");
+    figures.forEach((el) => { el.style.marginTop = ""; });
+    var h2Height = article.querySelector("h2").offsetHeight;
+    var heights = [];
+    figures.forEach((el) => { heights.push(el.offsetHeight); });
+
+    // Align each figure with its year in the left column
+    var prevBottom = h2Height;
+    figures.forEach((el, i) => {
+      var targetY = yearYMap[getYear(el)];
+      var margin = (targetY !== undefined) ? Math.max(0, targetY - prevBottom) : 0;
+      el.style.marginTop = `${margin}px`;
+      prevBottom += margin + heights[i];
+    });
+  }
 }
 
 new Timeline(document.querySelector("#cvs3")).toggle(true);

@@ -118,13 +118,21 @@
 
     .timeline article {
       position: relative;
-      width: 38%;
+      float: left;
+      width: 26%;
       overflow: hidden;
       margin-bottom: 100px;
     }
 
+    .timeline article:nth-of-type(2) {
+      margin-left: 14%;
+    }
+
+    .timeline article:nth-of-type(3) {
+      margin-left: 4%;
+    }
+
     .timeline article:first-of-type {
-      float: left;
       text-align: right;
     }
 
@@ -133,16 +141,20 @@
       float: right;
     }
 
-    .timeline article:last-of-type {
-      float: right;
-    }
-
-    .timeline article:last-of-type h2 {
+    .timeline article:nth-of-type(2) h2 {
       color: #c6e0aa;
     }
 
-    .timeline article:last-of-type h6 {
+    .timeline article:nth-of-type(2) h6 {
       color: #40aa00;
+    }
+
+    .timeline article:nth-of-type(3) h2 {
+      color: #f7e08a;
+    }
+
+    .timeline article:nth-of-type(3) h6 {
+      color: #d9a400;
     }
 
     .timeline article a {
@@ -173,7 +185,7 @@
           </figcaption>
           <h6>2026</h6>
           <p>
-            A port of the excellent coss-ui component library to Svelte.
+            A Svelte port of the coss-ui component library.
           </p>
         </figure>
         <figure>
@@ -182,7 +194,7 @@
           </figcaption>
           <h6>2025</h6>
           <p>
-            A port of an agentic memory system from python to Typescript.
+            A Typescript port of a Python agentic memory system.
           </p>
         </figure>
         <figure>
@@ -191,8 +203,7 @@
           </figcaption>
           <h6>2023</h6>
           <p>
-            I authored several modules for the Murex shell, mainly for
-            migrating my ecosystem.
+            Several modules for the Murex shell, written to migrate my ecosystem.
           </p>
         </figure>
 
@@ -202,9 +213,7 @@
           </figcaption>
           <h6>2023</h6>
           <p>
-            After years of using UIDs with limited understanding, I carried out research comparing the implementations
-            available on the market. The result is a full review and a clear guide on which implementation to use in
-            each case.
+            I compared the available UID implementations and wrote a clear guide on which one to use in each case.
           </p>
         </figure>
 
@@ -214,9 +223,7 @@
           </figcaption>
           <h6>2023</h6>
           <p>
-            A set of popClip extensions that enable integration with OpenAI.
-            They are convenient and allow you to leverage the power of chatGPT
-            anywhere from your desktop.
+            PopClip extensions that bring ChatGPT to anywhere on your desktop.
           </p>
         </figure>
 
@@ -224,8 +231,8 @@
           <figcaption><a href="https://github.com/orefalo/typegraphql-mikroorm-poc">DDD GraphQL</a></figcaption>
           <h6>2022</h6>
           <p>
-            A Domain Driven Design micro-service proof of concept which auto
-            generates databased and GraphQL Layer from code annotations.
+            A Domain Driven Design micro-service proof of concept that generates the database and GraphQL layer from
+            code annotations.
 
             <a href="https://medium.com/@orefalo_66733/microservice-proof-of-concept-7eb951cf7ee6">Supporting
               Article</a>
@@ -238,9 +245,7 @@
           </figcaption>
           <h6>2021</h6>
           <p>
-            With COVID-19, we saw the proliferation of QR codes everywhere. I
-            embarked on this project to understand the technology. The library
-            produces secure QR codes in GoLang
+            COVID-19 put QR codes everywhere. To understand them, I built a GoLang library that produces sealed QRCodes.
           </p>
         </figure>
 
@@ -250,9 +255,7 @@
           </figcaption>
           <h6>2021</h6>
           <p>
-            "To be successful, a good framework must come with good
-            components.". I authored a state of the art responsive component
-            to layout resizable view panels.
+            "A good framework needs good components." A state of the art responsive component for resizable view panels.
           </p>
         </figure>
 
@@ -262,11 +265,8 @@
           </figcaption>
           <h6>2020-2022</h6>
           <p>
-            Mu is a fn() server-less platform for private cloud. It is based
-            on a customized version of Oracle fn-project, Grafana, Vector and
-            K3s Kubernetes. It shines by its low resource footprint. Mu
-            bundles a functions runtime, a micro-service orchestrator in a
-            simple to deploy helm chart.
+            A serverless fn() platform for private clouds, built on a customized Oracle fn-project, Grafana, Vector and
+            K3s. Low footprint, shipped as a simple helm chart.
           </p>
         </figure>
 
@@ -276,8 +276,7 @@
           </figcaption>
           <h6>2019</h6>
           <p>
-            My 3rd startup focussed on providing a visual environment to
-            design and operate GraphQL APIs.
+            My 3rd startup: a visual environment to design and operate GraphQL APIs.
           </p>
         </figure>
 
@@ -287,10 +286,7 @@
           </figcaption>
           <h6>2019</h6>
           <p>
-            Parsing GraphQL SDL Grammar can be difficult using GraphQL.js, it
-            also accounts for a significant bundle size. I constructed a
-            PEG-compliant parser that is considerably smaller, faster, and has
-            no dependencies.
+            GraphQL.js is heavy for parsing SDL. I built a smaller, faster, dependency-free PEG parser.
           </p>
         </figure>
 
@@ -300,10 +296,7 @@
           </figcaption>
           <h6>2018</h6>
           <p>
-            StarUML is a software modeling and diagramming tool used for
-            creating UML (Unified Modeling Language) diagrams. With my growing
-            interest for GraphQL, I wrote an enable for StarUML which allows
-            to visually model schemas.
+            A StarUML extension to visually model GraphQL schemas.
           </p>
         </figure>
 
@@ -313,8 +306,7 @@
           <figcaption><a href="http://www.crionics.com">Crionics jPDF Suite</a></figcaption>
           <h6>2000-2010</h6>
           <p>
-            Crionics Inc. is my second startup. Crionics provides a full suite
-            of headless PDF manipulation softwares for the Java ecosystem.
+            My second startup: headless PDF manipulation software for Java.
           </p>
         </figure>
 
@@ -324,9 +316,7 @@
           </figcaption>
           <h6>2016-2023</h6>
           <p>
-            Git has a steep learning curve, back in the time I used this
-            project to help adoption in one of the organization I served. G2
-            is a simplified git command line client, easy to learn.
+            A simplified git command line client, built to ease git adoption in an organization I served.
           </p>
         </figure>
 
@@ -336,9 +326,7 @@
           </figcaption>
           <h6>2016</h6>
           <p>
-            Masonry layout is a type of grid-based layout commonly used in web
-            design to create a visually appealing and dynamic arrangement of
-            elements. This is a mootools implementation.
+            A mootools implementation of the Masonry grid layout.
           </p>
         </figure>
 
@@ -348,9 +336,7 @@
           </figcaption>
           <h6>2015</h6>
           <p>
-            A super-fast Mandelbrot fractal renderer. Built during my early
-            days, first version was in C/X11. This one was rewritten in Java a
-            few years later.
+            A fast Mandelbrot renderer, first written in C/X11, later rewritten in Java.
           </p>
         </figure>
 
@@ -360,8 +346,8 @@
           </figcaption>
           <h6>2011</h6>
           <p>
-            A expression evaluator which supports prioritization, variables
-            and expressions. One of my first opensource project.
+            An expression evaluator supporting priorities, variables and expressions. One of my first open source
+            projects.
           </p>
         </figure>
 
@@ -371,8 +357,7 @@
           </figcaption>
           <h6>2008</h6>
           <p>
-            a Java implementation of Jacobson Karels. It can be used to
-            estimate API latency & timeout based on sample metrics
+            A Java implementation of Jacobson Karels, to estimate API latency and timeouts from sample metrics.
           </p>
         </figure>
 
@@ -386,9 +371,7 @@
           </figcaption>
           <h6>2023</h6>
           <p>
-            Murex is an intuitive, typed and content aware shell for the 2020s
-            and beyond. I rewrote the marketting site using vuepress and
-            enhanced the documentation.
+            Murex is a typed, content-aware shell. I rebuilt its marketing site with vuepress and improved the docs.
           </p>
         </figure>
 
@@ -398,10 +381,7 @@
           </figcaption>
           <h6>2022</h6>
           <p>
-            Tauri.js is an open-source framework for building cross-platform
-            desktop applications using web technologies such as HTML, CSS, and
-            JavaScript. This project allows developers to create native
-            desktop applications by leveraging the power of Sveltekit.
+            A template for building native desktop apps with Tauri.js and SvelteKit.
           </p>
         </figure>
         <figure>
@@ -417,10 +397,7 @@
           </figcaption>
           <h6>2021</h6>
           <p>
-            A monorepo, short for "monolithic repository," is a software
-            development approach where multiple projects or components are
-            stored in a single repository. This project is a starter template
-            for large SvelteKit projects.
+            A starter template for large SvelteKit projects, organized as a monorepo.
           </p>
         </figure>
         <figure>
@@ -436,9 +413,80 @@
           </figcaption>
           <h6>2017</h6>
           <p>
-            Back in the time form validation was a big topic, I embarked on a
-            complete rewrite of the project.
+            Back when form validation was a big topic, I completely rewrote the project.
           </p>
+        </figure>
+      </article>
+      <article>
+        <h2>My Articles</h2>
+        <figure>
+          <figcaption>
+            <a href="https://medium.com/@orefalo_66733/ontologies-in-2026-llm-reasoners-to-the-rescue-7cc95ef7d551">Ontologies
+              in 2026 — LLM reasoners to the rescue</a>
+          </figcaption>
+          <h6>May 2025</h6>
+        </figure>
+        <figure>
+          <figcaption>
+            <a
+              href="https://medium.com/@orefalo_66733/level-up-the-power-of-your-data-in-2024-start-mastering-these-innovations-now-6ba18b380445">Level
+              Up the Power of Your Data in 2024</a>
+          </figcaption>
+          <h6>Jan 2024</h6>
+        </figure>
+        <figure>
+          <figcaption>
+            <a href="https://medium.com/@orefalo_66733/architecturally-significant-characteristics-71d51659efa7">Architecturally
+              Significant Characteristics</a>
+          </figcaption>
+          <h6>Dec 2023</h6>
+        </figure>
+        <figure>
+          <figcaption>
+            <a href="https://medium.com/@orefalo_66733/modeling-people-a-practical-guide-27e3a5fb699d">Modeling People,
+              a practical guide</a>
+          </figcaption>
+          <h6>Mar 2023</h6>
+        </figure>
+        <figure>
+          <figcaption>
+            <a href="https://medium.com/@orefalo_66733/microservice-proof-of-concept-7eb951cf7ee6">MicroService Proof of
+              Concept</a>
+          </figcaption>
+          <h6>Mar 2023</h6>
+        </figure>
+        <figure>
+          <figcaption>
+            <a href="https://medium.com/@orefalo_66733/the-monalisa-principle-efd1ed0a5825">The MonaLisa Principle</a>
+          </figcaption>
+          <h6>Mar 2023</h6>
+        </figure>
+        <figure>
+          <figcaption>
+            <a href="https://medium.com/@orefalo_66733/oltp-rdbms-modeling-guidelines-c378acc9b546">OLTP RDBMS modeling
+              guidelines</a>
+          </figcaption>
+          <h6>Feb 2023</h6>
+        </figure>
+        <figure>
+          <figcaption>
+            <a href="https://medium.com/@orefalo_66733/ai-call-it-ca-c907815f52d1">AI?! Call it CA!</a>
+          </figcaption>
+          <h6>Feb 2023</h6>
+        </figure>
+        <figure>
+          <figcaption>
+            <a href="https://medium.com/@orefalo_66733/architecture-is-a-metaphor-bef0756f8027">Architecture is a
+              Metaphor</a>
+          </figcaption>
+          <h6>Feb 2023</h6>
+        </figure>
+        <figure>
+          <figcaption>
+            <a href="https://medium.com/@orefalo_66733/the-problem-with-bpel-bpm-and-workflow-engines-b38a04e11fd">The
+              problem with BPEL/BPM and workflow engines</a>
+          </figcaption>
+          <h6>Jan 2023</h6>
         </figure>
       </article>
       <br style="clear: both" />
