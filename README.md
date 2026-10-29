@@ -1,5 +1,7 @@
 Hi, I'm Olivier Refalo 🙌,
 
+Explore my [Portfolio](https://orefalo.github.io/orefalo/)!
+
 I am:
 - an Entrepreneur
 - a Chief Architect
@@ -26,7 +28,6 @@ Over the years, I have seen some of my predictions come true: Java, Git, NodeJS,
 - 💬 Ask me about anything , Would love to help out.✌
 - 📫 How to reach me: [LinkedIn](https://www.linkedin.com/in/orefalo/)
 - ⚡ Check out my recent [Articles](https://medium.com/@orefalo_66733)
-- 📝 Then you may explore my [Portfolio](https://orefalo.github.io/orefalo/)
 
 **Languages and Tools:**
 
